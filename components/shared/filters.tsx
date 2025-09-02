@@ -5,6 +5,7 @@ import { Title } from './title'
 import { FilterCheckbox } from './filter-checkbox'
 import { Input } from '../ui'
 import { RangeSlider } from './range-slider'
+import { CheckboxFiltersGroup } from './checkbox-filters-group'
 
 interface Props {
   className?: string
@@ -57,19 +58,23 @@ export const Filters: React.FC<Props> = ({ className }) => {
           // onValueChange={updatePrices}
         />
       </div>
+
       {/* Bottom Checkboxes */}
-      {/* 
       <CheckboxFiltersGroup
         title='Ingredients'
         name='ingredients'
         className='mt-5'
         limit={6}
-        defaultItems={items.slice(0, 6)}
-        items={items}
-        loading={loading}
-        onClickCheckbox={filters.setSelectedIngredients}
-        selected={filters.selectedIngredients}
-      /> */}
+        items={[
+          { value: '1', text: 'Chees souce' },
+          { value: '2', text: 'Paper' },
+          { value: '3', text: 'Cucumber' },
+          { value: '4', text: 'Potato' },
+          { value: '5', text: 'Tomate' },
+          { value: '6', text: 'Salad' },
+          { value: '7', text: 'Onion' },
+        ]}
+      />
     </div>
   )
 }
