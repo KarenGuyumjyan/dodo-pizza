@@ -1,31 +1,31 @@
 'use client'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
-import React, { useState } from 'react'
+import { useCategoryStore } from '@/store/category'
 
 interface Props {
   className?: string
 }
 
 export const Categories: React.FC<Props> = ({ className }) => {
-  //   const categoryActiveId = useCategoryStore((state) => state.activeId);
-  const [categoryActiveId, setCategoryActiveId] = useState(0)
+  const categoryActiveId = useCategoryStore((state) => state.activeId)
 
   const categories = [
     {
-      name: 'Пиццы',
+      name: 'Pizza',
     },
     {
-      name: 'Завтрак',
+      name: 'Breakfast',
     },
     {
-      name: 'Закуски',
+      name: 'Snacks',
     },
     {
-      name: 'Коктейли',
+      name: 'Cocktails',
     },
     {
-      name: 'Напитки',
+      name: 'Drinks',
     },
   ]
 
@@ -37,7 +37,7 @@ export const Categories: React.FC<Props> = ({ className }) => {
         <a
           className={cn(
             'flex items-center font-bold h-11 rounded-2xl px-5',
-            categoryActiveId === index &&
+            categoryActiveId === index + 1 &&
               'bg-white shadow-md shadow-gray-200 text-primary',
           )}
           href={`/#${name}`}
