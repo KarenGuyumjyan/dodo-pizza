@@ -36,7 +36,7 @@ export const ProductCard: React.FC<Props> = ({
         </p>
 
         <div className='flex justify-between items-center mt-4'>
-          <span className='text-[20px]'>
+          <span className='text-xl'>
             Started from <b>{price} $</b>
           </span>
 

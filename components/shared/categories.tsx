@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const Categories: React.FC<Props> = ({ className }) => {
-  const categoryActiveId = useCategoryStore((state) => state.activeId)
+  const {activeId: categoryActiveId} = useCategoryStore((state) => state)
 
   const categories = [
     {
